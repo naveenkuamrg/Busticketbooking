@@ -37,7 +37,7 @@ class TicketCancelCommand(repository: Repository, scanner: CustomScanner, overri
                         print.message("BACK")
                         continue
                     }
-                    val cancelPassangerNames  = mutableListOf<String>()
+                    val cancelPassengerNames  = mutableListOf<String>()
                     var noOfPassengersToCancel :Int
                     do {
                         noOfPassengersToCancel = scanner.getNumber("Enter the number of Passenger to cancel ")
@@ -71,14 +71,14 @@ class TicketCancelCommand(repository: Repository, scanner: CustomScanner, overri
                             print.error("Enter the correct Index")
                         }else{
                             cancelTicket.passengerSeatMap[passengersName[passengerToCancelIndex-1]] = "CAN"
-                            cancelPassangerNames.add(passengersName[passengerToCancelIndex-1])
+                            cancelPassengerNames.add(passengersName[passengerToCancelIndex-1])
                             cancelledPassengerCount++
                         }
 
 
                     }
                     var notfyStr = ""
-                    for (name in cancelPassangerNames){
+                    for (name in cancelPassengerNames){
                         notfyStr += "  $name   "
                     }
                     sharedata.user?.updateNotifications(Notification("$notfyStr  ${cancelTicket.vehicleNo}  ${cancelTicket.source} -> ${cancelTicket.destination} has cancelled"))

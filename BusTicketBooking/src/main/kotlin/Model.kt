@@ -15,8 +15,8 @@ open class User(val email: String) {
 }
 
 class PremiumUser(email: String):User(email){
-    fun updateTicketSeat(ticket : Ticket, passangerName : String , updatedSeat : String){
-        ticket.passengerSeatMap[passangerName] = updatedSeat
+    fun updateTicketSeat(ticket : Ticket, passengerName : String , updatedSeat : String){
+        ticket.passengerSeatMap[passengerName] = updatedSeat
     }
 }
 
@@ -57,15 +57,10 @@ data class Ticket(val vehicleNo : String,
 }
 
 abstract class Bus(val vehicleNo : String, val noOfSeats : Int){
-    private  var seatLayout = mutableListOf<MutableList<String>>()
+    val seatLayout : MutableList<MutableList<String>>
     abstract  var type : BusType
     init {
         seatLayout = setSeatLayout()
-    }
-
-
-    fun getSeatLayouts() : MutableList<MutableList<String>>{
-        return  seatLayout
     }
 
     fun getAllSeatName() : MutableList<String>{

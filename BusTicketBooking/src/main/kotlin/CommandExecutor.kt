@@ -25,7 +25,8 @@ class CommandExecutor(val repository: Repository, val scanner : CustomScanner, p
             if (sharedata.user is PremiumUser) {
                 println(" 'signout' for signout \n 'book' for booking \n 'cancel' cancelling the ticket \n 'notify' for notification \n 'signup' for register(after signout use signup command ) \n 'print' for print the tickets \n 'update' for update your profile \n 'switch' for for switch your seat  ")
             } else {
-                println(" 'signout' for signout \n 'book' for booking \n 'cancel' cancelling the ticket \n 'notify' for notification \n 'signup' for register(after signout use signup command ) \n 'print' for print the tickets \n 'update' for update your profile \n 'upgrade' for upgrade your account to Premium  ")
+                println(" 'signout' for signout \n 'book' for booking \n 'cancel' cancelling the ticket \n 'notify' for notification \n 'signup' for register(after signout use signup command ) \n 'print' for print the tickets \n 'update' for update your profile \n 'upgrade' for upgrade your account to Premium  \n" +
+                        " 'switch' for for switch your seat  ")
             }
         }
     }

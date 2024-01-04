@@ -81,7 +81,7 @@ class TicketBookingCommand(repository: Repository, scanner: CustomScanner, overr
 
 
                 do {
-                    noOfSeatToBook = scanner.getNumber("Enter number of passanger or press -1 to back")
+                    noOfSeatToBook = scanner.getNumber("Enter number of passenger or press -1 to back")
                     if(noOfSeatToBook < -1){
                         print.error("Negative value are not allowed")
                         continue

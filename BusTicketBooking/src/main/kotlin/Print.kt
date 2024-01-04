@@ -5,7 +5,7 @@ class Print {
             BusType.SLEEPER_AND_NON_SLEEPER->{ println("N -> NonSleeper seat\nS -> Sleeper seat")}
             BusType.NON_SLEEPER ->{ println("N -> NonSleeper seat")}
         }
-        val seatLayout = bus.getSeatLayouts()
+        val seatLayout = bus.seatLayout
         for (row in seatLayout){
             for(seatName in row){
                 if(!bookedTicketSeat.contains(seatName)){
