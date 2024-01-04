@@ -18,17 +18,17 @@ class SwitchCommand(repository: Repository, scanner : CustomScanner, override va
             vehicle = vehicle_
         }
         print.availableSeat(vehicle!!,repository.getBookedSeats(vehicleMap,ticket.source,ticket.destination))
-        var numberOfPessanger : Int
+        var numberOfPassenger : Int
         do{
-            numberOfPessanger = scanner.getNumber("Enter number of passenger to switch ")
-            if(numberOfPessanger>0 && numberOfPessanger <= ticket.getPassengerNames().size){
+            numberOfPassenger = scanner.getNumber("Enter number of passenger to switch ")
+            if(numberOfPassenger>0 && numberOfPassenger <= ticket.getPassengerNames().size){
                 break
             }else{
                 print.error("number of passenger size is ${ticket.getPassengerNames().size} give correct size")
             }
 
         }while(true)
-        for (i in 1..numberOfPessanger){
+        for (i in 1..numberOfPassenger){
         selectTicket(
             repository.getBookedSeats(vehicleMap,ticket.source,ticket.destination),
             vehicle.getAllSeatName(),
