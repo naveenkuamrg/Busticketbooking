@@ -176,7 +176,7 @@ class Repository{
 
         val vehicles = getAvailableVehicles(source,destination)
         for ((_vehicle, _time) in vehicles.entries) {
-            if (_vehicle.vehicleNo == vehicleNo && time == _time) {
+            if (_vehicle.vehicleNumber == vehicleNo && time == _time) {
                return   mapOf(_vehicle to time)
 
             }

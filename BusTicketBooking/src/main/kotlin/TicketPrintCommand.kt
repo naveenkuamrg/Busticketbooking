@@ -16,7 +16,7 @@ class TicketPrintCommand(repository: Repository, scanner: CustomScanner, overrid
         for (ticket in tickets){
             println(index)
             println("---------------------------------------------------------")
-            println("vehicleNo ${ticket.vehicleNo}  ${ticket.source} -> ${ticket.destination}  rs : ${ticket.price} timing ${ticket.timing} ")
+            println("vehicleNumber ${ticket.vehicleNo}  ${ticket.source} -> ${ticket.destination}  rs : ${ticket.price} timing ${ticket.timing} ")
             println("---------------------------------------------------------")
             index++
         }

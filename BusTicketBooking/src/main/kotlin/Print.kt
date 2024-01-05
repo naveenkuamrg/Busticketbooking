@@ -5,7 +5,7 @@ class Print {
             BusType.SLEEPER_AND_NON_SLEEPER->{ println("N -> NonSleeper seat\nS -> Sleeper seat")}
             BusType.NON_SLEEPER ->{ println("N -> NonSleeper seat")}
         }
-        val seatLayout = bus.seatLayout
+        val seatLayout = bus.seatingLayout
         for (row in seatLayout){
             for(seatName in row){
                 if(!bookedTicketSeat.contains(seatName)){
@@ -32,7 +32,7 @@ class Print {
 
     fun ticket(ticket: Ticket){
         println("---------------------------------------------------------")
-        println("vehicleNo ${ticket.vehicleNo}  ${ticket.source} -> ${ticket.destination}  rs : ${ticket.price} timing ${ticket.timing} ")
+        println("vehicleNumber ${ticket.vehicleNo}  ${ticket.source} -> ${ticket.destination}  rs : ${ticket.price} timing ${ticket.timing} ")
         println("passenger name and seat no")
         for((name,seatName) in ticket.passengerSeatMap){
             println("$name   -    $seatName ")

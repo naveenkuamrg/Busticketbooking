@@ -31,7 +31,7 @@ class SwitchCommand(repository: Repository, scanner : CustomScanner, override va
         for (i in 1..numberOfPassenger){
         selectTicket(
             repository.getBookedSeats(vehicleMap,ticket.source,ticket.destination),
-            vehicle.getAllSeatName(),
+            vehicle.getAllSeatNames(),
             ticket
         )
             print.ticket(ticket)

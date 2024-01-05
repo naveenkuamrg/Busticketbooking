@@ -49,7 +49,7 @@ class TicketBookingCommand(repository: Repository, scanner: CustomScanner, overr
                 var index = 1
                 for ((vehicle_, time) in vehicles.entries) {
 
-                    println("$index -  ${vehicle_.vehicleNo} in $time available seats ${vehicle_.getAllSeatName().size - repository.getBookedSeats(
+                    println("$index -  ${vehicle_.vehicleNumber} in $time available seats ${vehicle_.getAllSeatNames().size - repository.getBookedSeats(
                         mapOf(vehicle_ to time),source,destination).size}  ${vehicle_.type}")
                     index++
                 }
@@ -77,7 +77,7 @@ class TicketBookingCommand(repository: Repository, scanner: CustomScanner, overr
 
                     print.availableSeat(vehicle!!,repository.getBookedSeats(vehicleMap!!,source,destination))
 
-                availableSeats = vehicle.getAllSeatName()
+                availableSeats = vehicle.getAllSeatNames()
 
 
                 do {
@@ -129,7 +129,7 @@ class TicketBookingCommand(repository: Repository, scanner: CustomScanner, overr
 
              var ticket : Ticket? = null
             for((_vehicle,time) in vehicleMap.entries) {
-                ticket = Ticket(_vehicle.vehicleNo,source,destination,passengerSeatMap,time,repository.getVehicleJourneyPrice(vehicleMap)*noOfSeatToBook)
+                ticket = Ticket(_vehicle.vehicleNumber,source,destination,passengerSeatMap,time,repository.getVehicleJourneyPrice(vehicleMap)*noOfSeatToBook)
                 sharedata.user?.updateTicketList(ticket)
             }
             sharedata.user?.updateNotifications(Notification("your ticket $source to $destination is booked successfully"))
